@@ -24,7 +24,7 @@ def send_db(value, label, user_type, conv_id, message_id, user_id):
     data = {'value': value, 'label': label, 'user_type': user_type, 'user_id': user_id,
             "conv_id": conv_id, "message_id": message_id, 'timestamp': now()}
     requests.post(
-        'http://piosow.pythonanywhere.com/api/add_log_data', json=data)
+        'LINK DO SERWERA/api/add_log_data', json=data) # W TO MIESCE NALEŻY WSTAWIĆ LINK
 
 
 class MyBot(ActivityHandler):
@@ -41,7 +41,7 @@ class MyBot(ActivityHandler):
             if turn_context.activity.value.get('quick_quiz', None) != None:
                 send_db(turn_context.activity.value['quick_quiz'],
                         'answer', 'user', c_id, turn_context.activity.id, turn_context.activity.from_property.id)
-                req = requests.post(f'http://piosow.pythonanywhere.com/api/pollsincebot?chatid={c_id}').text
+                req = requests.post(f'<LINK SERWERA>/api/pollsincebot?chatid={c_id}').text # W TO MIESCE NALEŻY WSTAWIĆ LINK
                 if req != 'EMPTY SET' and req[0] != '<':
                     try:
                         result = json.loads(req)
@@ -84,7 +84,7 @@ class MyBot(ActivityHandler):
                 send_db('', 'ankieta', 'bot', c_id, res.id, 'bot')
             elif turn_context.activity.value.get('reakcja', None) != None:
                 req = requests.post(
-                    f"http://piosow.pythonanywhere.com/api/lastbotfbf?chatid={c_id}").text
+                    f"LINK DO SERWERA/api/lastbotfbf?chatid={c_id}").text # W TO MIESCE NALEŻY WSTAWIĆ LINK
                 if req != 'EMPTY SET':
                     try:
                         last = json.loads(req)
