@@ -1,0 +1,99 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "reActive",
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Co myślisz o dzisiejszych zajęciach?",
+            "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.ShowCard",
+                    "card": {
+                        "type": "AdaptiveCard"
+                    },
+                    "title": "Nie"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Co ci się nie spodobało?",
+                        "size": "Medium",
+                        "wrap": true
+                    },
+                    {
+                        "type": "Input.Text",
+                        "id": "SteakOther",
+                        "isMultiline": true,
+                        "placeholder": "Wpisz jaki masz PROBLEM"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "OK",
+                        "data": {
+                            "FoodChoice": "Steak"
+                        }
+                    }
+                ],
+                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            },
+            "id": "${hasMenu.hasMenuSection[0].name}",
+            "title": "Nie rozumiem"
+        },
+        {
+            "type": "Action.ShowCard",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Co ci się spodobało w zajęciach?",
+                        "size": "Medium",
+                        "wrap": true
+                    },
+                    {
+                        "type": "Input.Text",
+                        "id": "ChickenOther",
+                        "isMultiline": true,
+                        "placeholder": "Wpisz tu jakiego problemu NIE MASZ"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "OK",
+                        "data": {
+                            "FoodChoice": "Chicken"
+                        }
+                    }
+                ],
+                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            },
+            "title": "Tak"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Wyślij button"
+        }
+    ]
+}

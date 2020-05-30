@@ -1,15 +1,19 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-from botbuilder.core import ActivityHandler, TurnContext
-from botbuilder.schema import ChannelAccount
+from botbuilder.core import ActivityHandler, TurnContext, CardFactory
+from botbuilder.schema import ChannelAccount, Activity
+import json
 
 
 class MyBot(ActivityHandler):
     # See https://aka.ms/about-bot-activity-message to learn more about the message and other activity types.
 
     async def on_message_activity(self, turn_context: TurnContext):
-        await turn_context.send_activity(f"You said '{ turn_context.activity.text }'")
+        if turn_context.activity.text == '\\start':
+            with open('sample.json', 'r') as card_f:
+                card = CardFactory.adaptive_card(json.load(card_f))
+                await turn_context.send_activity(Activity(attachments=[card]))
 
     async def on_members_added_activity(
         self,
