@@ -14,7 +14,7 @@ class MyBot(ActivityHandler):
             with open('sample.json', 'r', encoding="utf-8") as card_f:
                 card = CardFactory.adaptive_card(json.load(card_f))
                 await turn_context.send_activity(Activity(attachments=[card]))
-        elif turn_context.activity.text == None:
+        elif turn_context.activity.text == None and len(turn_context.activity.value['reakcja'])>1:
             await turn_context.send_activity("1 osoba zareagowała: "+turn_context.activity.value['reakcja'])
 
     async def on_members_added_activity(
