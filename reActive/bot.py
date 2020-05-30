@@ -11,7 +11,7 @@ class MyBot(ActivityHandler):
 
     async def on_message_activity(self, turn_context: TurnContext):
         if turn_context.activity.text == '\\start':
-            with open('sample.json', 'r') as card_f:
+            with open('sample.json', 'r', encoding="utf-8") as card_f:
                 card = CardFactory.adaptive_card(json.load(card_f))
                 await turn_context.send_activity(Activity(attachments=[card]))
 

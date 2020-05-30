@@ -1,99 +1,107 @@
 {
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "version": "1.2",
     "body": [
         {
             "type": "TextBlock",
-            "text": "reActive",
-            "size": "Medium",
-            "weight": "Bolder"
+            "text": "Twój osobisty reakcyjny anonbot:"
         },
         {
-            "type": "TextBlock",
-            "text": "Co myślisz o dzisiejszych zajęciach?",
-            "wrap": true
-        },
-        {
-            "type": "ActionSet",
-            "actions": [
+            "type": "ColumnSet",
+            "columns": [
                 {
-                    "type": "Action.ShowCard",
-                    "card": {
-                        "type": "AdaptiveCard"
-                    },
-                    "title": "Nie"
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "👍",
+                                    "data": {
+                                        "reakcja": "Tak"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "👎",
+                                    "data": {
+                                        "reakcja": "Nie"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "😀",
+                                    "data": {
+                                        "reakcja": "Mordo ja sam nie wiem"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "🖕",
+                                    "data": {
+                                        "reakcja": "Andrzeeej"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "✍",
+                                    "data": {
+                                        "reakcja": "Łazanki"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
     ],
-    "actions": [
-        {
-            "type": "Action.ShowCard",
-            "card": {
-                "type": "AdaptiveCard",
-                "body": [
-                    {
-                        "type": "TextBlock",
-                        "text": "Co ci się nie spodobało?",
-                        "size": "Medium",
-                        "wrap": true
-                    },
-                    {
-                        "type": "Input.Text",
-                        "id": "SteakOther",
-                        "isMultiline": true,
-                        "placeholder": "Wpisz jaki masz PROBLEM"
-                    }
-                ],
-                "actions": [
-                    {
-                        "type": "Action.Submit",
-                        "title": "OK",
-                        "data": {
-                            "FoodChoice": "Steak"
-                        }
-                    }
-                ],
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
-            },
-            "id": "${hasMenu.hasMenuSection[0].name}",
-            "title": "Nie rozumiem"
-        },
-        {
-            "type": "Action.ShowCard",
-            "card": {
-                "type": "AdaptiveCard",
-                "body": [
-                    {
-                        "type": "TextBlock",
-                        "text": "Co ci się spodobało w zajęciach?",
-                        "size": "Medium",
-                        "wrap": true
-                    },
-                    {
-                        "type": "Input.Text",
-                        "id": "ChickenOther",
-                        "isMultiline": true,
-                        "placeholder": "Wpisz tu jakiego problemu NIE MASZ"
-                    }
-                ],
-                "actions": [
-                    {
-                        "type": "Action.Submit",
-                        "title": "OK",
-                        "data": {
-                            "FoodChoice": "Chicken"
-                        }
-                    }
-                ],
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
-            },
-            "title": "Tak"
-        },
-        {
-            "type": "Action.Submit",
-            "title": "Wyślij button"
-        }
-    ]
+    "id": "Card"
 }
