@@ -68,7 +68,7 @@ async def messages(req: Request) -> Response:
     else:
         return Response(status=415)
     activity = Activity().deserialize(body)
-    #print("\n"*3, activity)
+   
     auth_header = req.headers["Authorization"] if "Authorization" in req.headers else ""
     try:
         response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)

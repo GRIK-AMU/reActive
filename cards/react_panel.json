@@ -15,7 +15,7 @@
             "actions": [
                 {
                     "type": "Action.ShowCard",
-                    "title": "REAKCJA",
+                    "title": "Reaguj",
                     "card": {
                         "type": "AdaptiveCard",
                         "body": [
@@ -133,10 +133,97 @@
                             "actions": [
                                 {
                                     "type": "Action.ShowCard",
-                                    "title": "Dodaj ankietę",
+                                    "title": "Szybka ankieta",
                                     "card": {
-                                        "type": "AdaptiveCard"
-                                    }
+                                        "type": "AdaptiveCard",
+                                        "body": [
+                                            {
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "type": "Input.Text",
+                                                        "placeholder": "Zadaj pytanie",
+                                                        "id": "pytanie"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "ColumnSet",
+                                                "columns": [
+                                                    {
+                                                        "type": "Column",
+                                                        "width": "stretch",
+                                                        "items": [
+                                                            {
+                                                                "type": "TextBlock",
+                                                                "text": "1️⃣",
+                                                                "horizontalAlignment": "Center"
+                                                            },
+                                                            {
+                                                                "type": "Input.Text",
+                                                                "id": "quickanswer_A"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Column",
+                                                        "width": "stretch",
+                                                        "items": [
+                                                            {
+                                                                "type": "TextBlock",
+                                                                "text": "2️⃣",
+                                                                "horizontalAlignment": "Center"
+                                                            },
+                                                            {
+                                                                "type": "Input.Text",
+                                                                "id": "quickanswer_B"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Column",
+                                                        "width": "stretch",
+                                                        "items": [
+                                                            {
+                                                                "type": "TextBlock",
+                                                                "text": "3️⃣",
+                                                                "horizontalAlignment": "Center"
+                                                            },
+                                                            {
+                                                                "type": "Input.Text",
+                                                                "id": "quickanswer_C"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "Column",
+                                                        "width": "stretch",
+                                                        "items": [
+                                                            {
+                                                                "type": "TextBlock",
+                                                                "text": "4️⃣",
+                                                                "horizontalAlignment": "Center"
+                                                            },
+                                                            {
+                                                                "type": "Input.Text",
+                                                                "id": "quickanswer_D"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "ActionSet",
+                                                "actions": [
+                                                    {
+                                                        "type": "Action.Submit",
+                                                        "title": "Ankietuj"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "id": "quickquiz"
                                 }
                             ]
                         }

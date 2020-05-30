@@ -5,103 +5,35 @@
     "body": [
         {
             "type": "TextBlock",
-            "text": "Twój osobisty reakcyjny anonbot:"
+            "text": "Szybka ankieta",
+            "weight": "Bolder",
+            "size": "Large"
         },
         {
-            "type": "ColumnSet",
-            "columns": [
+            "type": "TextBlock",
+            "text": "PYTANIE PLC",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "color": "Attention",
+            "size": "Medium"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "style": "expanded",
+            "choices": [
+                ODP_PLC
+            ],
+            "placeholder": "Placeholder text",
+            "id": "quick_quiz"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
                 {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "👍",
-                                    "data": {
-                                        "reakcja": "Tak"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "👎",
-                                    "data": {
-                                        "reakcja": "Nie"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "😀",
-                                    "data": {
-                                        "reakcja": "Mordo ja sam nie wiem"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "🖕",
-                                    "data": {
-                                        "reakcja": "Andrzeeej"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Column",
-                    "width": "auto",
-                    "items": [
-                        {
-                            "type": "ActionSet",
-                            "actions": [
-                                {
-                                    "type": "Action.Submit",
-                                    "title": "✍",
-                                    "data": {
-                                        "reakcja": "Łazanki"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "Action.Submit",
+                    "title": "Wyślij odpowiedź"
                 }
             ]
         }
-    ],
-    "id": "Card"
+    ]
 }
